@@ -40,3 +40,45 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+#outerWrapper {
+	position:relative;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	height: 100%;
+	width: 100%;
+}
+
+#floatingControlsWrapper {
+	position:absolute;
+	float:left;
+    margin: 20px auto 80px 20px;
+    width: 400px;
+    min-height: 200px;
+    padding: 0px 20px 0px 20px;
+    background-color: GhostWhite;
+    box-shadow: 2px 2px 3px #888888;
+    border-radius: 5px;
+
+}
+
+#floatingControls {
+	position: center;
+    margin: 10px auto 10px auto;
+    width: 95%;
+    padding: 0px 20px 0px 20px;
+}
+
+
+#outputDirections {
+	position:absolute;
+	clear:left;
+	float:left;
+    margin: 325px auto 50px 20px;
+    width: 400px;
+    min-height: 0px;
+    max-height: 400px;
+    padding: 0px 20px 0px 20px;
+    background-color: GhostWhite;
+    overflow: auto;
+}

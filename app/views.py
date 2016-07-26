@@ -47,3 +47,17 @@ def about(request):
             'year':datetime.now().year,
         })
     )
+
+def map(request):
+    """Renders the main Map page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/mainmap.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Main Map',
+            'message':'Map my location',
+            'date':datetime.now(),
+        })
+    )
