@@ -41,13 +41,34 @@ function GetMap()
             console.log('should have returned by now! Entering for loop.');
             for (var i=0; i < routeCoords.length; i++) {
                 $( "<p>" + routeCoords[i].getObjectString() + "</p>" ).appendTo( $( "#PrintRoutePoints" ) );
-                var newPushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(routeCoords[i].lat, routeCoords[i].lon), null);
-                map.entities.push(newPushpin);
+                CreatePushPin(map, routeCoords[i].lat, routeCoords[i].lon);
             }
         });
     });
 }
 
+
+function httpGet(theUrl)
+{
+    var request =  new XMLHttpRequest();
+    request.open("GET", theUrl, false);
+    request.send(null);
+    return request.responseText;
+}
+
+function ConstructUrl(lattitude, longitude){
+    var url = "http://api.wunderground.com/api/4ba128ed10d80d64/conditions/q/"+lattitude+","+longitude+".json";
+    return url;
+}
+
+function CreatePushPin(map, lattitude, longitude){
+    var url = ConstructUrl(lattitude, longitude);
+    var response = httpGet(url);
+    var imageIcon = JSON.parse(response).current_observation.icon_url;
+    var pushpinOptions = {icon:imageIcon, width: 50, height: 50, draggable:false, zIndex:100}; 
+    var pushpin= new Microsoft.Maps.Pushpin(map.getCenter(), pushpinOptions); 
+    map.entities.push(pushpin);
+}
 
 
 function onGeoSuccess(position) {
