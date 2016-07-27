@@ -66,7 +66,7 @@ function CreatePushPin(map, lattitude, longitude){
     var response = httpGet(url);
     var imageIcon = JSON.parse(response).current_observation.icon_url;
     var pushpinOptions = {icon:imageIcon, width: 50, height: 50, draggable:false, zIndex:100}; 
-    var pushpin= new Microsoft.Maps.Pushpin(map.getCenter(), pushpinOptions); 
+    var pushpin= new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lattitude, longitude), pushpinOptions); 
     map.entities.push(pushpin);
 }
 
