@@ -28,9 +28,17 @@ function GetMap() {
         directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('outputDirections') });
         directionsManager.showInputPanel('floatingControls');
     });
+
+
+    //Microsoft.Maps.Events.addHandler(map, 'click', function () { createPushPin(curPos, map); });
 }
 
-
+function createPushPin(position, map)
+{
+    var pushpin = new Microsoft.Maps.Map.Pushpin(position, null);
+    map.entities.push(pushpin);
+    pushpin.setOptions({ enableHoverStyle: true, enableClickedStyle: true });
+}
 
 function onGeoSuccess(position) {
     var curPos = new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude);
