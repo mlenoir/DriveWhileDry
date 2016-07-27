@@ -94,6 +94,11 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'n(bd1f1c%e8=_xad02x5qtfn%wgwpi492e$8_erx+d)!tpeoim'
 
+# Bing Maps Api Keys
+BING_MASTER_KEY = 'AomGAtcZAICKw58BzpjxfMs4yensI72mmTF4L91dPB_09ZraJhnlWPmXaFhUpDeg'
+
+BING_QUERY_KEY = 'AgLjImv82s2I_28BZLAQHNLWdFPKA5S-HrPkf7f6rwkIQHmZME5071DOQ3ocmc5r'
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',

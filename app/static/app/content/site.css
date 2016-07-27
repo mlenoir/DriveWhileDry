@@ -59,6 +59,7 @@ input[type="checkbox"].input-validation-error {
     background-color: GhostWhite;
     box-shadow: 2px 2px 3px #888888;
     border-radius: 5px;
+    z-index:200;
 
 }
 
@@ -66,7 +67,7 @@ input[type="checkbox"].input-validation-error {
 	position: center;
     margin: 10px auto 10px auto;
     width: 95%;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 0px 0px 0px;
 }
 
 
@@ -77,8 +78,9 @@ input[type="checkbox"].input-validation-error {
     margin: 325px auto 50px 20px;
     width: 400px;
     min-height: 0px;
-    max-height: 400px;
+    max-height: 350px;
     padding: 0px 20px 0px 20px;
     background-color: GhostWhite;
+    z-index: 200;
     overflow: auto;
 }
